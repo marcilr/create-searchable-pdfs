@@ -1,0 +1,458 @@
+%% -*- Mode: LaTeX -*-
+%%
+%% template.tex
+%% Created Wed Jul 25 09:32:40 AKDT 2007
+%% by Raymond E. Marcil <marcilr@gmail.com>
+%% 
+%% LaTeX Template with Examples
+%%
+
+  %%
+%%%%%% Preamble.
+  %%
+
+%% Specify DVIPS driver used by things like hyperref
+\documentclass[12pt,letterpaper,dvips]{article}
+
+%% rcs is the package to display cvs revision info.
+%%\usepackage{rcs}
+\usepackage{fullpage}
+\usepackage{fancyvrb} 
+\usepackage{graphicx}
+\usepackage{figsize}
+\usepackage{calc}
+\usepackage{xspace}
+\usepackage{booktabs}
+\usepackage[first,bottomafter]{draftcopy}
+\usepackage[numbib]{tocbibind}
+
+\usepackage{amssymb}              %% AMS Symbols, used for \checkmark
+\usepackage{multicol}
+
+%%
+%% Extract SVN metadata for use elsewhere.
+%% This information has:
+%% o the filename
+%% o the revision number
+%% o the date and time of the last Subversion co command
+%% o name of the user who has done the action
+%%
+\usepackage{svninfo}
+\svnInfo $Id: template.tex 52 2013-02-04 22:32:54Z marcilr $
+
+%%
+%% Hyperref package for embedding URLs for clickable links in PDFs, 
+%% also specify PDF attributes here.
+%%
+%% The pdfborder={0 0 0} is what ellimated the blue box around the url
+%% displayed by \href{}{}.
+%%
+%% The command pdfborder={0 0 1} would display a box with thickness of 1 pt.
+%%
+%% Hypertext marks in LATEX: a manual for hyperref
+%% by Sebastian Rahtz and Heiko Oberdiek - November 2012
+%% http://ctan.org/pkg/hyperref 
+%% http://mirror.hmc.edu/ctan/macros/latex/contrib/hyperref/doc/manual.html
+%%
+\usepackage[
+colorlinks,
+linkcolor=blue,
+%%colorlinks=false,
+hyperindex=false,
+urlcolor=blue,
+pdfborder={0 0 0},
+pdfauthor={Raymond E. Marcil},
+pdftitle={LaTeX Template with Examples},
+pdfcreator={ps2pdf},
+pdfsubject={LaTeX Examples},
+pdfkeywords={LaTeX Examples}
+]{hyperref}
+
+
+%%
+%% Extract RCS metadata for use elsewhere.
+%% Jason figured this out, very cool.
+%%
+%%\RCS $Revision: 1.53 $
+%%\RCS $Date: 2006/06/26 21:04:55 $
+
+
+  %%
+%%%%%% Customization.
+  %%
+
+% On letter paper with 10pt font the Verbatim environment has 65 columns.
+% With 12pt font the environment has 62 columns.  Exceeding this will exceed
+% the frame and will look ugly.  YHBW.  HAND.
+\RecustomVerbatimEnvironment{Verbatim}{Verbatim}{frame=single}
+
+\renewenvironment{description}
+                 {\list{}{\labelwidth 0pt \iteminden-\leftmargin
+                          \let\labelsep\hsize
+                          \let\makelabel\descriptionlabel}}
+                 {\endlist}
+\renewcommand*\descriptionlabel[1]{\hspace\labelsep\sffamily\bfseries #1}
+
+
+  %%
+%%%%%% Commands.
+  %%
+
+\newcommand{\FIXME}[1]{\textsf{[FIXME: #1]}}
+\newcommand{\cmd}[1]{\texttt{#1}}
+
+
+%% Squeeze space above/below captions
+\setlength{\abovecaptionskip}{4pt}   % 0.5cm as an example
+\setlength{\belowcaptionskip}{4pt}   % 0.5cm as an example
+
+
+%% Tex really adds a lot of whitespace to itemized 
+%% lists so define a new command itemize* with a 
+%% lot less whitespace.  Found this in the British
+%% Tex faq.
+\newenvironment{itemize*}%
+  {\begin{itemize}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}}%
+  {\end{itemize}}
+
+%% Squeeze space
+\renewcommand\floatpagefraction{.9}
+\renewcommand\topfraction{.9}
+\renewcommand\bottomfraction{.9}
+\renewcommand\textfraction{.1}   
+\setcounter{totalnumber}{50}
+\setcounter{topnumber}{50}
+\setcounter{bottomnumber}{50}
+
+
+  %%
+%%%%%% Document.
+  %%
+
+\title{\LaTeX\ Template}
+
+\author{Raymond E. Marcil\\
+        \texttt{marcilr@gmail.com}
+}
+
+% Display subversion revision and date under author on 1st page.
+\date{Revision \svnInfoRevision
+      \hspace{2pt}
+      (\svnInfoLongDate)}
+
+
+% Set date to RCS revision date
+%%\date{Revision \RCSRevision
+%%      \hspace{2pt}
+%%      (\RCSDate)}
+
+
+%%
+%% Display SVN (subversion) version data at top right of 1st page,
+%% This may be preferable to underneath the author.
+%%
+%%\rhead{Revision \svnInfoRevision\\
+%%\svnInfoLongDate}
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+     This document contains \LaTeX\ Template with Examples.
+
+\end{abstract}
+
+\vspace{2.0in}
+
+%% Draw DNR logo and address at bottom of page
+%%\begin{figure}[h]
+%%        \hspace{0.32in}
+%%        \SetFigLayout{1}{1}
+%%        \begin{minipage}[b]{0.16\figwidth}
+%%                \includegraphics[width=\textwidth]{dnr_bwlogo.eps}
+%%        \end{minipage}
+%%        \hspace{5pt}
+%%        \begin{minipage}[b]{\figwidth}
+%%                \bf{Alaska Department of Natural Resources}\\
+%%                \small{\sf{Division of Support Services\\
+%%                Land Records Information Section\\
+%%                550 W. 7th Ave. Suite 706\\
+%%                Anchorage, Alaska 99501}}
+%%        \end{minipage}
+%%\end{figure}
+
+\newpage
+\tableofcontents
+
+\newpage
+\listoffigures
+\listoftables
+
+
+%% =============== List of Abbreviations ===============
+%% =============== List of Abbreviations ===============
+\newpage
+\section*{List of Definitions and Abbreviations}
+\begin{itemize*}
+  \item{\begin{bf}MOA\end{bf}} - Municipality of Anchorage
+
+\end{itemize*}
+
+
+%% ====================== Introduction ===========================
+%% ====================== Introduction ===========================
+\newpage
+\section{Introduction}
+Introduction to the \LaTeX\ Template with Examples.
+
+
+%% ======================== Questions ============================
+%% ======================== Questions ============================
+\section{Questions}
+\FIXME{None yet...}
+
+
+%% ======================== Examples =============================
+%% ======================== Examples =============================
+\newpage
+\section{Examples}
+Series of useful \LaTeX\ markup. Need to break out to 
+separate examples.tex file.
+
+\subsection{Escaping $<$ and $>$ Symbols}
+To get \$$<$\$ or \$$>$\$ just wrap the symbols in \$ for math mode.
+
+\subsection{Enumerate}
+\begin{enumerate}
+  \item{DNR} - Alaska State Department of Natural Resources
+    \begin{itemize*}
+      \item{HI} - Historical Index, not maintained since 1982
+      \item{LE} - Land Estate, maintained by SGU
+      \item{ME} - Mineral Estate, maintaind by SGU
+   \end{itemize*}
+
+  \item{Alaska State Surveys}
+    \begin{itemize*}
+      \item{ASBLT} - As-Built Survey
+      \item{ASCS} - Cadastral Survey
+    \end{itemize*}
+\end{enumerate}
+
+
+%% ======================= Comments =======================
+%% ======================= Comments =======================
+\subsection{Comments}
+\begin{center}
+\framebox{
+\begin{minipage}[t]{0.9\textwidth}
+\cmd{COMMENTS} Comment --- \emph{Sean Weems, Spring 2003}\\
+We should get the \cmd{COMMENTS} column searchable via the 
+landrecords application before we do much anything else -- shouldn't
+be too hard.
+\end{minipage}
+}
+\end{center}
+
+\begin{center}
+\framebox{
+\begin{minipage}[t]{0.9\textwidth}
+\emph{Errata: Plats spanning multiple sections}\\
+A few anomalies can be observed in the \cmd{AKPLATS}
+table. Specifically plats exist that span multiple sections. 
+Since the table only has a single column, \cmd{SCODE}, 
+that accepts a single section code, SGU (Status
+Graphics Unit) has handled this problem by entering multiple 
+rows in the table, each with a different section that point to
+the same plat or file. Multiple section plats are indicated by  setting 
+the \cmd{TCODE} column to the value \cmd{37}, and making an 
+appropriate notation like \emph{Section 24-25-26-27} in the 
+\cmd{REMARKS} column.\\
+\FIXME{Perhaps the \cmd{SCODE} column should accept an array of sections?}
+
+\end{minipage}
+}
+\end{center}
+
+
+%% ====================== Footnotes ======================
+%% ====================== Footnotes ======================
+\subsection{Footnotes}
+See my
+footnote\footnote{\href{http://www.google.com/search?q=latex+footnotes}{Search}
+google for footnotes.}
+generated with:
+
+\begin{verbatim}
+  \footnote{\href{http://www.google.com/search?q=latex+footnotes}
+  {Search google for footnotes.}}
+\end{verbatim}
+
+\noindent GoogleGuide --- Linking to Search
+Results.\footnote{GoogleGuide --- \href{http://www.googleguide.com/linking.html}{Linking to Search Results.}}
+
+
+%% ====================== Hyperlinks ======================
+%% ====================== Hyperlinks ======================
+\subsection{Hyperlinks}
+Use $\backslash$href\{\} to generate hyperlinks:
+
+\begin{verbatim}
+  \href{http://www.google.com}{Google}}
+\end{verbatim}
+
+\noindent Yields: \href{http://www.google.com}{Google}
+
+
+%% ================ Simple Table Examples ================
+%% ================ Simple Table Examples ================
+\subsection{Simple Table Examples}
+\begin{table}[htb]
+\begin{tabular}{|p{.25\textwidth}|p{.20\textwidth}|p{.47\textwidth}|}\hline 
+Column Name&Type&Description\\ 
+\hline
+EQS&VARCHAR2(1)&!NULL map shows village selections\\
+ITM\_COL&VARCHAR2(1)&USGS ITM column: 1-6\\
+ITM\_ROW&VARCHAR2(1)&USGS ITM row: A-E\\
+QMQ\_ABBR\_DNR&VARCHAR2(3)&Three character DNR abbreviation for the QMQ\\
+RASTER\_FILENAME&VARCHAR2(50)&Physical path to file\\
+RASTER\_PATHNAME&VARCHAR2(50)&URL path to PDF of map\\
+SCODE&VARCHAR2(2)&Supplement map code: 1,2,3,...\\
+COMMENTS&VARCHAR2(256)&Plat comments\\
+\hline
+\end{tabular}
+\caption {\cmd{EASEMENTS\_17B} Table}
+\label{table:easements_17b}
+\end{table}
+
+%% A simple table example
+%% The htb attribute attempts to inline the table or figure
+%% where you put it in the document
+\begin{table}[htb]
+\begin{center}
+\begin{tabular*}{\textwidth}{@{}p{.25\textwidth}@{}p{.75\textwidth}}
+\hline
+\hline\\[-2.5ex]
+XML element&Descripton\\
+\hline
+\hline\\[-1.5ex]   %% Trick to add whitespace after horizontal line
+FNUM&US Survey file number\\ 
+MERIDIAN&BLM meridian code\\
+&\hspace{10pt}12 = Copper River\\
+&\hspace{10pt}13 = Fairbanks\\
+&\hspace{10pt}28 = Seward\\
+&\hspace{10pt}44 = Kateel\\
+&\hspace{10pt}45 = Umiat\\
+TOWNSHIP&Five character Township code\\
+RANGE&Five character Range code\\
+PAGE&Survey page number 1,2,3,...\\
+FILENAME&Relative path to file in direcory\\[1.5ex]
+\hline
+\end{tabular*}
+\caption {USS XML index elements}
+\label{table:uss-index}
+\end{center}
+\end{table}
+
+
+%% ==================== Another Simple Table Example =================
+%% ==================== Another Simple Table Example =================
+\newpage
+\subsection{Another Simple Table Example}
+\begin{table}[htb]
+\begin{tabular}{|p{.16\textwidth}|p{.17\textwidth}|p{.62\textwidth}|}\hline 
+Column Name&Type&Description\\ 
+\hline
+MTR&VARCHAR2(9)&Meridian, Township, Range, example: \emph{C026S054E}\\
+QMQ&VARCHAR2(3)&Quarter Million Quadrangle code,\\
+&&\hspace{10pt}example: \emph{DIL} (Dillingham quadrangle)\\
+\hline
+\end{tabular}
+\caption {\cmd{XREF\_MTR\_QMQ} Table}
+\label{table:xref_mtr_qmq}
+\end{table}
+
+
+%% ====================== Verbatim ==========================
+%% ====================== Verbatim ==========================
+\newpage
+\subsection{Verbatim}
+Verbatim can be used to display text verbatim.  Usage:
+\begin{quote}
+$\backslash$begin\{verbatim\}\\
+My verbatim text here...\\
+$\backslash$end\{verbatim\}
+\end{quote}
+
+%%
+%% Making Figures in LaTeX
+%% The [htb] part above advises LaTeX to put the figure "here"
+%% or at the "top" or " bottom" of the page, with that order of preference.
+%% http://www.sci.utah.edu/~macleod/latex/latex-figures.html
+%%
+\noindent The following figure leverages verbatim for proper formatting:
+\vspace{-5mm}
+\begin{center}
+\begin{figure}[htb]
+\begin{quote}
+\small
+\begin{Verbatim}[frame=none]
+gis/raster/
+  dnr/
+    map_library/
+    plats/
+      SP/YYYYMMDD/*.pdf               # indexed
+      HI/YYYYMMDD/*.pdf               # Indexed
+      ASLS/YYYYMMDD/*.pdf             # Indexed
+    recorded-plats/
+      YYYYMMDD/*.pdf
+  blm/
+    easements_17b/YYYYMMDD/*.pdf      # indexed
+    mtp/YYYYMMDD/*.pdf                # non-indexed
+    usrs/YYYYMMDD/*.pdf               # indexed
+    usrs-notes/YYYYMMDD/*.pdf         # indexed
+    uss/YYYYMMDD/*.pdf                # indexed
+    uss-notes/YYYYMMDD/*.pdf          # indexed
+    usms/YYYYMMDD/*.pdf               # indexed
+    usms-notes/YYYYMMDD/*.pdf         # indexed
+  usgs/
+    drg/
+      collared/ 
+        250K/
+        63K/
+        25K/
+        24/
+      decollared/
+      tools/
+      missing\_data/
+    dem/
+    doq/
+    topo/
+\end{Verbatim}
+\normalsize
+\end{quote}
+\caption{File and Directory Structure}
+\label{fig:dirlayout}
+\end{figure}
+\end{center}
+
+
+%% ======================== Appendix =============================
+%% ======================== Appendix =============================
+
+\clearpage
+\newpage
+\section{Appendix}
+Need content here.
+
+\end{document}
+
+%% Local Variables:
+%% fill-column: 78
+%% mode: auto-fill
+%% compile-command: "make"
+%% End:
+

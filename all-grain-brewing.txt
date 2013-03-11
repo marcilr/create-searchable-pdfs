@@ -4,3 +4,13 @@ Copyright (C) 2013 by Raymond E. Marcil <marcilr@gmail.com>
 
 
 All-Grain Brewing
+
+
+Sun Mar 10 20:17:06 AKDT 2013
+============================
+Set subversion property such that that svninfo keywords get expanded in all-grain-brewing.tex
+file:
+
+$ svn propset svn:keywords "Id" all-grain-bewing.tex
+property 'svn:keywords' set on 'all-grain-bewing.tex'
+$

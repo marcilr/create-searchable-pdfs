@@ -6,6 +6,12 @@ by Raymond E. Marcil <marcilr@gmail.com>
 Create Searchable PDFs
 
 
+Sat Apr 13 14:22:37 AKDT 2013
+=============================
+Copied all-grain-brewing/ repo to create-searchable-pdfs/ for easy LaTeX template.
+Renamed files from all-grain-brewing.* to create-searchable-pdfs.*
+
+
 Sun Mar 10 20:17:06 AKDT 2013
 ============================
 Set subversion property such that that svninfo keywords get expanded in all-grain-brewing.tex
